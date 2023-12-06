@@ -1,0 +1,128 @@
+// src/styles/style.scss
+
+
+@use "variable"; 
+
+@forward "about";
+
+
+@mixin button-style {
+  padding: 10px 20px;
+  background-color: variable.$primary-color;
+  color: variable.$white-color;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: variable.$white-color;
+    color: variable.$primary-color;
+  }
+}
+
+@mixin product-card-style {
+  background-color: variable.$white-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 5px;
+
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .add-to-cart {
+    @include button-style; 
+  }
+}
+
+
+
+.product-showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .product-card {
+    @include product-card-style;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+    animation-delay: 0.2s;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns:repeat(1, 1fr); 
+  }
+}
+
+
+
+.reviews {
+  text-align: center;
+  padding: 40px 40px;
+  height: 50vh;
+  
+
+  @media screen and (max-width: 768px) {
+    height: 100vh;
+}
+}
+.review-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+
+.review {
+  background-color: variable.$white-color;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review blockquote {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .review-container {
+    grid-template-columns: 1fr;
+  }
+}

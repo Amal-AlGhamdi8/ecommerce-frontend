@@ -1,0 +1,335 @@
+@use 'variable';
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: variable.$origin-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  color: variable.$origin-color;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 100;
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.logo {
+  height: auto;
+
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+  padding: 5px 20px 5px 5px;
+}
+
+ul li a {
+  color: variable.$origin-color;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: variable.$secondary-color;
+  text-decoration: none;
+}
+
+// main .hero {
+//   background-image: url(../src/images/bg.jpg);
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   color: variable.$white-color;
+//   text-align: center;
+//   height: 100vh;
+
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.btn-button {
+  padding: 10px 20px;
+  background-color: #141e46;
+  color: variable.$origin-color;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+}
+
+.btn-button:hover {
+  background-color: variable.$light-color;
+  color: variable.$primary-color;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #c04848 0%, #480048 51%, #c04848 100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: variable.$white-color;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: variable.$white-color;
+  text-decoration: none;
+}
+
+.img-Product {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-nav {
+    padding: 20px;
+  }
+
+  .logo-nav {
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      position: static;
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .menu li {
+      padding: 10px 0;
+    }
+
+    .hero {
+      padding: 50px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .btn-button {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+
+footer {
+  background-color: black;
+  color: #eeeded;
+  text-align: center;
+  margin-top: auto;
+  align-items: center;
+
+}
+.newsletter {
+  width: 100%;
+  padding: 2rem;
+  background-color: #000;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: variable.$origin-color;
+}
+
+.newsletter div {
+  background-color: variable.$white-color;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter div input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: #000;
+}
+
+.newsletter div i {
+  cursor: pointer;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px;
+  color: variable.$white-color;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links .link {
+  padding: 2rem 10px;
+}
+
+.social-links .link a {
+  color: variable.$origin-color;
+}
+
+.social-links .link a:hover {
+  color: #00f;
+}
+
+.copyright {
+  font-size: 10px;
+  color: variable.$origin-color;
+  align-items: center;
+
+}
+
+.contact-info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  .newsletter {
+    flex-direction: column;
+  }
+  .newsletter span:before {
+    content: 'Join Our ';
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.SendIcon {
+  color: #231f1e;
+}
+
+/* ProductDetails */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1px;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .product-image {
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+
+  li {
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+  }
+}
+.active-page {
+  background-color: variable.$primary-color;
+  color: #fff;
+}
+
+.logout-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #8b7a7a;
+    color: #000;
+  }
+}
+
+.btn-button,
+.favorite-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-button:hover,
+.favorite-button:hover {
+  background-color: variable.$light-color;
+  color: variable.$primary-color;
+}
+
+@media (max-width: 768px) {
+  /* Add the following styles to allow scrolling for the table */
+  .table-container {
+    overflow-x: auto; /* Horizontal scrolling */
+    max-width: 100%; /* Ensure it doesn't overflow the viewport */
+  }
+
+  .cart-table {
+    /* Adjust the table styles for smaller screens */
+    width: 100%; /* Make the table full width */
+  }
+}
