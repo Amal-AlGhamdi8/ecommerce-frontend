@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 
 import aboutImage from '../../images/win.png'
+import backgroundImage from '../../images/bg.jpg'
 
 const Main = () => {
   const heroStyles = {
-    background: 'url(../src/images/bg.jpg)',
+    background: 'url(../../images/bg.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
